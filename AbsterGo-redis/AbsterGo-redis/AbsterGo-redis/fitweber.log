@@ -1,0 +1,19 @@
+[INFO] 2016-05-22 21:52:48,638 org.springframework.context.support.ClassPathXmlApplicationContext - Refreshing org.springframework.context.support.ClassPathXmlApplicationContext@126097b: startup date [Sun May 22 21:52:48 CST 2016]; root of context hierarchy
+[INFO] 2016-05-22 21:52:48,695 org.springframework.beans.factory.xml.XmlBeanDefinitionReader - Loading XML bean definitions from class path resource [spring-mvc.xml]
+[INFO] 2016-05-22 21:52:49,021 org.springframework.beans.factory.xml.XmlBeanDefinitionReader - Loading XML bean definitions from class path resource [spring-redis.xml]
+[INFO] 2016-05-22 21:52:49,173 org.springframework.beans.factory.config.PropertyPlaceholderConfigurer - Loading properties file from class path resource [redis.properties]
+[INFO] 2016-05-22 21:52:49,191 org.springframework.beans.factory.support.DefaultListableBeanFactory - Pre-instantiating singletons in org.springframework.beans.factory.support.DefaultListableBeanFactory@10143d3: defining beans [org.springframework.context.annotation.internalConfigurationAnnotationProcessor,org.springframework.context.annotation.internalAutowiredAnnotationProcessor,org.springframework.context.annotation.internalRequiredAnnotationProcessor,org.springframework.context.annotation.internalCommonAnnotationProcessor,org.springframework.beans.factory.config.PropertyPlaceholderConfigurer#0,poolConfig,shardedJedisPool,org.springframework.context.annotation.ConfigurationClassPostProcessor.importAwareProcessor]; root of factory hierarchy
+[INFO] 2016-05-22 21:52:49,261 org.springframework.context.support.ClassPathXmlApplicationContext - Refreshing org.springframework.context.support.ClassPathXmlApplicationContext@1606c0b: startup date [Sun May 22 21:52:49 CST 2016]; root of context hierarchy
+[INFO] 2016-05-22 21:52:49,262 org.springframework.beans.factory.xml.XmlBeanDefinitionReader - Loading XML bean definitions from class path resource [spring-redis.xml]
+[INFO] 2016-05-22 21:52:49,300 org.springframework.beans.factory.config.PropertyPlaceholderConfigurer - Loading properties file from class path resource [redis.properties]
+[INFO] 2016-05-22 21:52:49,301 org.springframework.beans.factory.support.DefaultListableBeanFactory - Pre-instantiating singletons in org.springframework.beans.factory.support.DefaultListableBeanFactory@149af10: defining beans [org.springframework.beans.factory.config.PropertyPlaceholderConfigurer#0,poolConfig,shardedJedisPool]; root of factory hierarchy
+[ERROR] 2016-05-22 21:52:51,370 org.AbsterGo.redis.service.BasicJedisService - connection fail
+redis.clients.jedis.exceptions.JedisConnectionException: Could not get a resource from the pool
+	at redis.clients.util.Pool.getResource(Pool.java:22)
+	at org.AbsterGo.redis.service.BasicJedisService.getJedisCon(BasicJedisService.java:49)
+	at org.AbsterGo.redis.serviceImpl.redisServiceImpl.set(redisServiceImpl.java:49)
+	at test.test.main(test.java:27)
+Caused by: java.util.NoSuchElementException: Could not create a validated object, cause: ValidateObject failed
+	at org.apache.commons.pool.impl.GenericObjectPool.borrowObject(GenericObjectPool.java:1203)
+	at redis.clients.util.Pool.getResource(Pool.java:20)
+	... 3 more
